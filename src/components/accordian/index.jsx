@@ -15,6 +15,7 @@ export default function Accordian(){
     }
     
     function handleMultiSelection(getCurrentId){
+        //Why arent we directly manipulating multiple array?
         let cpyMultiple = [...multiple];
         const findIndexOfCurrentId = cpyMultiple.indexOf(getCurrentId);
         if(findIndexOfCurrentId === -1) cpyMultiple.push(getCurrentId);
@@ -36,7 +37,7 @@ export default function Accordian(){
                                 <span>+</span>
                             </div>
 
-                            {
+                            {/* {
                                 enableMultiSelection
                                 ? multiple.indexOf(dataItem.id) !== -1 && (
                                     <div className="content">{dataItem.answer}</div>
@@ -44,15 +45,15 @@ export default function Accordian(){
                                 : selected === dataItem.id && (
                                     <div className="content">{dataItem.answer}</div>
                                 )
-                            }
+                            } */}
 
-                            {/* {
-                                selected === dataItem.id || multiple.indexOf(dataItem.id) !== -1 ? 
+                            {
+                                selected === dataItem.id || (multiple.indexOf(dataItem.id) !== -1) ? 
                                 (
                                     <div className="content">{dataItem.answer}</div> 
                                 ) :
                                 null
-                            }   */}
+                            }  
                         </div>  
                     )
 
