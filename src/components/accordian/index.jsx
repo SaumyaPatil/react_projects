@@ -7,8 +7,8 @@ export default function Accordian(){
     function handleSingleSelection(getCurrentId){
         console.log(getCurrentId);
         console.log(selected);
-        setSelected(getCurrentId);
-        console.log(selected);
+        setSelected(getCurrentId === selected ? null : getCurrentId);
+        console.log(selected); 
     }
     
     return(
@@ -21,13 +21,13 @@ export default function Accordian(){
                             <h3>{dataItem.question}</h3>
                             <span>+</span>
                         </div>
-                    {
-                        selected === dataItem.id ? 
-                        (
-                            <div className="content">{dataItem.answer}</div> 
-                        ) :
-                        null
-                    }  
+                        {
+                            selected === dataItem.id ? 
+                            (
+                                <div className="content">{dataItem.answer}</div> 
+                            ) :
+                            null
+                        }  
                     </div>  
                 )
 
