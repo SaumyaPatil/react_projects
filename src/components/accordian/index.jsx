@@ -14,7 +14,8 @@ export default function Accordian(){
     return(
         <div className="wrapper">
             {
-                data.length > 0 ?
+                
+                data && data.length > 0 ?
                 data.map(dataItem => 
                     <div className="item">
                         <div onClick={()=>handleSingleSelection(dataItem.id)} className="title">
