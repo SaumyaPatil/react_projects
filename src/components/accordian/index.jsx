@@ -25,14 +25,22 @@ export default function Accordian(){
 
     return(
         <div className="wrapper">
-            <button onClick={() => setEnableMultiSelection(!enableMultiSelection)}>Enable Multi Selection</button>
+            <button onClick={() => {
+                setEnableMultiSelection(!enableMultiSelection);
+                setSelected(null);
+                setMultiple([]);
+            }}
+                >Enable Multi Selection</button>
             <div className="accordian">
                 {
                     
                     data && data.length > 0 ?
                     data.map(dataItem => 
                         <div className="item">
-                            <div onClick={enableMultiSelection ? ()=>handleMultiSelection(dataItem.id) : ()=>handleSingleSelection(dataItem.id)} className="title">
+                            <div onClick={enableMultiSelection 
+                                ? ()=>handleMultiSelection(dataItem.id) 
+                                : ()=>handleSingleSelection(dataItem.id)
+                            } className="title">
                                 <h3>{dataItem.question}</h3>
                                 <span>+</span>
                             </div>
@@ -48,7 +56,7 @@ export default function Accordian(){
                             } */}
 
                             {
-                                selected === dataItem.id || (multiple.indexOf(dataItem.id) !== -1) ? 
+                                selected === dataItem.id || enableMultiSelection && multiple.indexOf(dataItem.id) !== -1 ? 
                                 (
                                     <div className="content">{dataItem.answer}</div> 
                                 ) :
