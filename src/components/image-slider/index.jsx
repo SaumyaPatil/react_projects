@@ -15,9 +15,9 @@ export default function ImageSlider({url, limit=5, page=1}){
         try{
             setLoading(true);
             // Real-World Usage:
-            // 🔹 Fetching data from an API (e.g., fetching users, products, or posts).
-            // 🔹 Consuming RESTful services in frontend apps (React, Next.js).
-            // 🔹 Handling asynchronous operations cleanly using async/await.
+            // Fetching data from an API (e.g., fetching users, products, or posts).
+            // Consuming RESTful services in frontend apps (React, Next.js).
+            // Handling asynchronous operations cleanly using async/await.
 
             // These lines are used to make an API request and handle the response in JavaScript
             // The fetch() function is used to make an HTTP request (GET request by default) to the specified getUrl.

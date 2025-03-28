@@ -48,9 +48,9 @@
 }
   
 .hide-current-image{
-      display: none;
+    display: none;
 }
   
 .inactive-indicator{
-      background-color: gray;
+    background-color: gray;
 }
