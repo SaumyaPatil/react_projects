@@ -5,7 +5,7 @@ import './styles.css';
 export default function ImageSlider({url, limit=5, page=1}){
     
     const [images, setImages] = useState([]);
-    const [currentSlider, setCurrentSlider] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(0);
     const [errorMsg, setErrorMsg] = useState(null);
     
     //While handling API calls, always take this -
@@ -42,11 +42,11 @@ export default function ImageSlider({url, limit=5, page=1}){
     }
 
     function handlePrev(){
-        setCurrentSlider(currentSlider === 0 ? images.length - 1 : currentSlider-1);
+        setCurrentSlide(currentSlide === 0 ? images.length - 1 : currentSlide - 1);
     }
 
     function handleNext(){
-        setCurrentSlider(currentSlider === images.length - 1 ? 0 : currentSlider+1);
+        setCurrentSlide(currentSlide === images.length - 1 ? 0 : currentSlide + 1);
     }
 
     useEffect(()=>{
@@ -72,8 +72,7 @@ export default function ImageSlider({url, limit=5, page=1}){
                 key={imageItem.id}
                 alt={imageItem.download_url}
                 src={imageItem.download_url}
-                className={currentSlider === index ? "current-image" : "current-image hide-current-image"}
-
+                className={currentSlide === index ? "current-image" : "current-image hide-current-image"}
                 />
             ))
             
@@ -85,8 +84,8 @@ export default function ImageSlider({url, limit=5, page=1}){
                 images && images.length ? 
                 images.map((_, index)=><button
                 key={index}
-                className={currentSlider === index ? "current-indicator" : "current-indicator hide-current-indicator"}
-                onClick={()=>setCurrentSlider(index)}
+                className={currentSlide === index ? "current-indicator" : "current-indicator inactive-indicator"}
+                onClick={()=>setCurrentSlide(index)}
                 ></button>)
                 :null
             }
