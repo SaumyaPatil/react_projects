@@ -26,7 +26,8 @@ export default function StarRating({noOfStars}){
         justifyContent: 'center'
     }}>
         {
-            [...Array(noOfStars)].map((_,index)=>{
+            [...Array(noOfStars)].map((_, index)=>{
+                console.log(_);
                 index += 1;
                 return <FaStar
                     key={index}
