@@ -45,7 +45,7 @@ export default function Accordian(){
                                 <span>+</span>
                             </div>
 
-                            {/* {
+                            {
                                 enableMultiSelection
                                 ? multiple.indexOf(dataItem.id) !== -1 && (
                                     <div className="content">{dataItem.answer}</div>
@@ -53,15 +53,15 @@ export default function Accordian(){
                                 : selected === dataItem.id && (
                                     <div className="content">{dataItem.answer}</div>
                                 )
-                            } */}
+                            }
 
-                            {
+                            {/* {
                                 selected === dataItem.id || enableMultiSelection && multiple.indexOf(dataItem.id) !== -1 ? 
                                 (
                                     <div className="content">{dataItem.answer}</div> 
                                 ) :
                                 null
-                            }  
+                            }  */}
                         </div>  
                     )
 
