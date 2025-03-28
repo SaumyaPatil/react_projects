@@ -21,7 +21,10 @@ export default function StarRating({noOfStars}){
         setHover(rating);
     }
 
-    return <div className="star-rating">
+    return <div className="star-rating" style={{
+        display: 'flex',
+        justifyContent: 'center'
+    }}>
         {
             [...Array(noOfStars)].map((_,index)=>{
                 index += 1;
