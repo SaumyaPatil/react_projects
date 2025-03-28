@@ -27,8 +27,8 @@ export default function StarRating({noOfStars}){
     }}>
         {
             [...Array(noOfStars)].map((_, index)=>{
-                console.log(_);
-                index += 1;
+                // console.log(_);
+                index += 1;   //Why this?
                 return <FaStar
                     key={index}
                     className={index <= (hover || rating) ? 'active' : 'inactive'}
