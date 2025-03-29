@@ -10,12 +10,15 @@ export default function Accordian(){
     function handleSingleSelection(getCurrentId){
         console.log(getCurrentId);
         console.log(selected);
+        //To close the clicked accordian in case its already selected
         setSelected(getCurrentId === selected ? null : getCurrentId);
         console.log(selected); 
     }
     
     function handleMultiSelection(getCurrentId){
         //Why arent we directly manipulating multiple array?
+
+        //This logic is to unselect the option thats already checked and vice versa
         let cpyMultiple = [...multiple];
         const findIndexOfCurrentId = cpyMultiple.indexOf(getCurrentId);
         if(findIndexOfCurrentId === -1) cpyMultiple.push(getCurrentId);
@@ -30,7 +33,7 @@ export default function Accordian(){
                 setSelected(null);
                 setMultiple([]);
             }}
-                >Enable Multi Selection</button>
+            >Enable Multi Selection</button>
             <div className="accordian">
                 {
                     
