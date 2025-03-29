@@ -16,7 +16,7 @@ export default function Accordian(){
     }
     
     function handleMultiSelection(getCurrentId){
-        //Why arent we directly manipulating multiple array?
+        //Why arent we directly manipulating multiple array? - direct state update doesnt trigger re-render
 
         //This logic is to unselect the option thats already checked and vice versa
         let cpyMultiple = [...multiple];
@@ -30,6 +30,7 @@ export default function Accordian(){
         <div className="wrapper">
             <button onClick={() => {
                 setEnableMultiSelection(!enableMultiSelection);
+                //This is mandatory to clear out the values as and when the button is enabled/disabled
                 setSelected(null);
                 setMultiple([]);
             }}
@@ -48,7 +49,7 @@ export default function Accordian(){
                                 <span>+</span>
                             </div>
 
-                            {
+                            {/* {
                                 enableMultiSelection
                                 ? multiple.indexOf(dataItem.id) !== -1 && (
                                     <div className="content">{dataItem.answer}</div>
@@ -56,15 +57,15 @@ export default function Accordian(){
                                 : selected === dataItem.id && (
                                     <div className="content">{dataItem.answer}</div>
                                 )
-                            }
+                            } */}
 
-                            {/* {
-                                selected === dataItem.id || enableMultiSelection && multiple.indexOf(dataItem.id) !== -1 ? 
-                                (
-                                    <div className="content">{dataItem.answer}</div> 
-                                ) :
+                            {
+                                //When enableMultiSelection is true, the selected is null otherwise multiple is empty array
+                                //So it will work properly as per enableMultiSelection value
+                                selected === dataItem.id || multiple.indexOf(dataItem.id) !== -1 ? 
+                                <div className="content">{dataItem.answer}</div> :
                                 null
-                            }  */}
+                            } 
                         </div>  
                     )
 
