@@ -9,10 +9,10 @@ function App() {
   return (
     <div className='App'>
       {/* Accordian component */}
-      <Accordian/>
+      {/* <Accordian/> */}
 
       {/* Random Color Component */}
-      {/* <RandomColor/> */}
+      <RandomColor/>
 
       {/* Star rating component */}
       {/* <StarRating noOfStars={10}/> */}

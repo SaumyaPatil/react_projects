@@ -11,6 +11,7 @@ export default function RandomColor(){
     }
 
     function handleCreateHexColor(){
+        //The random color will be based on the length of this hex array that you have created.
         const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
         let hexColor = "#";
 
@@ -41,11 +42,11 @@ export default function RandomColor(){
         <div style={{
             width: "100vw",
             height: "100vh",
-            background: color,
+            background: {color},
         }}>
             {/* You just define the particular function to be called */}
-            <button onClick={()=>setTypeOfColour("hex")}>Create HEX colour</button>
-            <button onClick={()=>setTypeOfColour("rgb")}>Create RGB colour</button>
+            <button onClick={()=>setTypeOfColour("hex")}>Create HEX Colour</button>
+            <button onClick={()=>setTypeOfColour("rgb")}>Create RGB Colour</button>
             <button onClick={typeOfColour === "hex" ? handleCreateHexColor : handleCreateRgbColor}>Generate Random Color</button>
             <div
                 style={{
