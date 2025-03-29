@@ -33,6 +33,9 @@ export default function RandomColor(){
     // This function works when we click on either of the buttons Create HEX colour or Create RGB colour cause when you click on those 
     // buttons just the text HEX or RGB gets changed but the functions are not triggered
     
+    //The callback function provided to useEffect only gets triggered when theres a change in typeOfColour variable.
+    //If you click the Create HEX Color and Create RGB Color twice, it wont work as the value of the variable remains the same.
+    //So, the functions will not be triggered twice.
     useEffect(()=>{
         if(typeOfColour === 'rgb')handleCreateRgbColor();
         else handleCreateHexColor();
