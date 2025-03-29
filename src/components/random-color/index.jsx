@@ -48,8 +48,16 @@ export default function RandomColor(){
             background: {color},
         }}>
             {/* You just define the particular function to be called */}
-            <button onClick={()=>setTypeOfColour("hex")}>Create HEX Colour</button>
-            <button onClick={()=>setTypeOfColour("rgb")}>Create RGB Colour</button>
+            <button onClick={()=>{
+                setTypeOfColour("hex");
+                //You can fix this if you want these buttons to work and generate random colors everytime they are clicked!
+                // handleCreateHexColor();
+            }}>Create HEX Colour</button>
+            <button onClick={()=>{
+                setTypeOfColour("rgb");
+                //You can fix this if you want these buttons to work and generate random colors everytime they are clicked!
+                // handleCreateRgbColor();
+            }}>Create RGB Colour</button>
             <button onClick={typeOfColour === "hex" ? handleCreateHexColor : handleCreateRgbColor}>Generate Random Color</button>
             <div
                 style={{
