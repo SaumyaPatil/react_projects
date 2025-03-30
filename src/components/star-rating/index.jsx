@@ -32,7 +32,7 @@ export default function StarRating({noOfStars}){
             //Destructuring of array 
             [...Array(noOfStars)].map((_, index)=>{
                 // console.log(_);
-                index += 1;   //This is to pass as 1, 2, 3, 4, 5 this way
+                index += 1;   //This is to pass as 1, 2, 3, 4, 5 this way as array indexing starts from 0
                 return <FaStar
                     key={index}
 
