@@ -37,7 +37,8 @@ export default function RandomColor(){
     //If you click the Create HEX Color and Create RGB Color twice, it wont work as the value of the variable remains the same.
     //So, the functions will not be triggered twice.
     useEffect(()=>{
-        if(typeOfColour === 'rgb')handleCreateRgbColor();
+        if(typeOfColour === 'rgb') handleCreateRgbColor();            
+        
         else handleCreateHexColor();
     },[typeOfColour]);
 
@@ -45,7 +46,7 @@ export default function RandomColor(){
         <div style={{
             width: "100vw",
             height: "100vh",
-            background: {color},
+            background: color,
         }}>
             {/* You just define the particular function to be called */}
             <button onClick={()=>{

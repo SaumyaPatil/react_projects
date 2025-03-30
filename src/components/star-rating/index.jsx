@@ -26,12 +26,15 @@ export default function StarRating({noOfStars}){
         justifyContent: 'center'
     }}>
         {
+            //Destructuring of array 
             [...Array(noOfStars)].map((_, index)=>{
                 // console.log(_);
                 index += 1;   //Why this?
                 return <FaStar
                     key={index}
                     className={index <= (hover || rating) ? 'active' : 'inactive'}
+
+                    //These methods we will recieve from parent component
                     onClick={()=>handleClick(index)}
                     onMouseMove={()=>handleMouseHover(index)}
                     onMouseLeave={()=>handleMouseLeave()}

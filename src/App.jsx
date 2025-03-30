@@ -12,10 +12,10 @@ function App() {
       {/* <Accordian/> */}
 
       {/* Random Color Component */}
-      <RandomColor/>
+      {/* <RandomColor/> */}
 
       {/* Star rating component */}
-      {/* <StarRating noOfStars={10}/> */}
+      <StarRating noOfStars={10}/>
 
       {/* Image slider component */}
       {/* <ImageSlider url={'https://picsum.photos/v2/list'} limit={'10'}/> */}
