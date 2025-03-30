@@ -34,7 +34,6 @@ export default function StarRating({noOfStars}){
                     key={index}
                     className={index <= (hover || rating) ? 'active' : 'inactive'}
 
-                    //These methods we will recieve from parent component
                     onClick={()=>handleClick(index)}
                     onMouseMove={()=>handleMouseHover(index)}
                     onMouseLeave={()=>handleMouseLeave()}
