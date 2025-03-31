@@ -12,6 +12,7 @@ export default function ImageSlider({url, limit=5, page=1}){
     const [loading, setLoading] = useState(false);
 
     async function fetchImages(getUrl) {
+        //Handling error is very much important in interviews
         try{
             setLoading(true);
             // Real-World Usage:
@@ -53,7 +54,7 @@ export default function ImageSlider({url, limit=5, page=1}){
         if(url !== '') fetchImages(url);
     }, [url]);
 
-    console.log(images);
+    // console.log(images);
 
     if(loading){
         return <div>Loading data ! Please wait</div>
@@ -65,14 +66,15 @@ export default function ImageSlider({url, limit=5, page=1}){
 
     return <div className="container">
         <BsArrowLeftCircleFill onClick={handlePrev} className="arrow arrow-left"/>
+        {/* How are the images getting displayed? Where are the images when they are hidden? */}
         {
             images && images.length ? 
             images.map((imageItem, index)=>(
                 <img 
-                key={imageItem.id}
-                alt={imageItem.download_url}
-                src={imageItem.download_url}
-                className={currentSlide === index ? "current-image" : "current-image hide-current-image"}
+                    key={imageItem.id}
+                    alt={imageItem.download_url}
+                    src={imageItem.download_url}
+                    className={currentSlide === index ? "current-image" : "current-image hide-current-image"}
                 />
             ))
             
@@ -92,3 +94,4 @@ export default function ImageSlider({url, limit=5, page=1}){
         </span>
     </div>
 }
+ 
